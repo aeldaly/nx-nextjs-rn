@@ -1,3 +1,1 @@
-export function shared(): string {
-  return 'shared';
-}
+export { CenteredText } from './components/poc/CenteredText';
