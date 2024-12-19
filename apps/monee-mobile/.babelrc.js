@@ -14,12 +14,35 @@ module.exports = function (api) {
           },
         ],
       ],
+      plugins: [
+        [
+          'module-resolver',
+          {
+            alias: {
+              '@monee/shared': '../../libs/shared/src',
+            },
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+          },
+        ],
+      ],
     };
   }
 
   return {
     presets: [
       ['module:@react-native/babel-preset', { useTransformReactJSX: true }],
+    ],
+    plugins: [
+      // 'nativewind/babel',
+      [
+        'module-resolver',
+        {
+          alias: {
+            '@monee/shared': '../../libs/shared/src',
+          },
+          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        },
+      ],
     ],
   };
 };
